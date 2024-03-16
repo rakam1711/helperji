@@ -45,21 +45,21 @@ exports.authenticate = (req, res, next) => {
 }
 
 
-exports.formDataParser=(req,res,next)=>{
-    try {
-        let form = new formidable.IncomingForm()
-        form.parse(req,(err,fields={},files)=>{
-            if (err) {
-                console.log('err',err)
-                return
-            }
-            req.body = {...fields,files}
-            console.log('xxxxxxx',fields,files)
-            next()
-        })
-    } catch (error) {
-        req.errorStatus=401
-        next(error)
-    }
+// exports.formDataParser=(req,res,next)=>{
+//     try {
+//         let form = new formidable.IncomingForm()
+//         form.parse(req,(err,fields={},files)=>{
+//             if (err) {
+//                 console.log('err',err)
+//                 return
+//             }
+//             req.body = {...fields,files}
+//             console.log('xxxxxxx',fields,files)
+//             next()
+//         })
+//     } catch (error) {
+//         req.errorStatus=401
+//         next(error)
+//     }
    
-}
+// }
