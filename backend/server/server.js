@@ -31,12 +31,8 @@ const setupBodyParser = () => {
 const setupDatabase = () => {
   mongoose
     .connect(env()?.MONGO_URI)
-    .then((r) => {
-      console.log("Connected to Database");
-    })
-    .catch((e) => {
-      console.error("Error Connecting to Database", e);
-    });
+    .then(() => {console.log("Connected to Database")})
+    .catch((e) => {console.error("Error Connecting to Database", e)});
 };
 
 const setupRoutes =()=>{
